@@ -1,0 +1,136 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.player-container {
+  width: 604px;
+  height: 340px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (min-width: 604px) {
+  .video {
+    object-fit: cover;
+  }
+
+  .player-container {
+    -webkit-clip-path: url(#clip-path);
+    clip-path: url(#clip-path);
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.video-controls {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  padding: 0 10px 10px;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  display: flex;
+  justify-content: space-between;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.5)
+  );
+  color: #fff;
+}
+
+.video-controls__item {
+  display: flex;
+  align-items: center;
+}
+
+.video-controls__item--right {
+  gap: 10px;
+}
+
+.time {
+  font-family: sans-serif;
+  font-size: 10px;
+}
+
+.button {
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.15s ease-in-out;
+}
+
+.button:hover {
+  opacity: 1;
+}
+
+.playback-button {
+  width: 28px;
+  height: 28px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.button__icon {
+  width: 100%;
+  height: 100%;
+  fill: #fff;
+  stroke: #fff;
+}
+
+.player-container:hover .video-controls {
+  opacity: 1;
+}
+
+.volummer {
+  position: relative;
+  padding: 10px 0 0;
+  top: -5px;
+}
+
+.volummer-control {
+  writing-mode: bt-lr;
+  -webkit-appearance: slider-vertical;
+  height: 70px;
+  width: 100%;
+  padding: 0 5px;
+  position: absolute;
+  bottom: calc(100% - 5px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+}
+
+.volummer:hover .volummer-control {
+  display: unset;
+}
+
+.volummer-button {
+  width: 28px;
+  height: 28px;
+}
+
+.volummer-button {
+  background-color: transparent;
+}

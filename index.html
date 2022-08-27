@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Video player</title>
+  </head>
+  <body>
+    <main class="main">
+      <div class="player-container">
+        <video controls class="video" preload="metadata" poster="images/poster.jpg">
+          <source src="https://tractive.com/assets/static/videos/ActivityMonitoring_15s_EN.mp4" type="video/mp4"></source>
+        </video>
+
+        <div class="video-controls hidden">
+            <div class="video-controls__item">
+              <button class="playback-button button">
+                <svg class="button__icon">
+                  <use href="#play-icon"></use>
+                  <use class="hidden" href="#pause"></use>
+                </svg>
+              </button>
+            </div>
+
+            <div class="video-controls__item video-controls__item--right">
+              <div class="time">
+                <time class="time__remaining">00:00</time>
+              </div>
+              <div class="volummer">
+                <button class="volummer-button button">
+                  <svg class="button__icon">
+                    <use href="#volume"></use>
+                  </svg>
+                </button>
+                <input class="volummer-control" value="1" type="range" max="1" min="0" step="0.01" orient="vertical">
+              </div>
+            </div>
+        </div>
+      </div>
+    </main>
+
+    <svg style="position: absolute; width: 0; height: 0;">
+      <defs>
+        <symbol id="pause" viewBox="0 0 24 24">
+          <path d="M14.016 5.016h3.984v13.969h-3.984v-13.969zM6 18.984v-13.969h3.984v13.969h-3.984z"></path>
+        </symbol>
+
+        <symbol id="play-icon" viewBox="0 0 24 24">
+          <path d="M8.016 5.016l10.969 6.984-10.969 6.984v-13.969z"></path>
+        </symbol>
+
+        <symbol id="volume" viewBox="0 0 26 24">
+          <path d="m1 9.6v6.3c0 0.3-0.2 0.5-0.5 0.5-0.3 0-0.5-0.2-0.5-0.5v-6.3c0-0.2 0.2-0.5 0.5-0.5 0.3 0 0.5 0.3 0.5 0.5zm3.8-4.3v15.4c0 0.3-0.2 0.5-0.4 0.5-0.3 0-0.5-0.2-0.5-0.5v-15.4c0-0.3 0.2-0.5 0.5-0.5 0.2 0 0.4 0.2 0.4 0.5zm3.9-4.8v25c0 0.3-0.2 0.5-0.5 0.5-0.3 0-0.5-0.2-0.5-0.5v-25c0-0.3 0.2-0.5 0.5-0.5 0.3 0 0.5 0.2 0.5 0.5zm3.9 0.9v23.2c0 0.2-0.3 0.4-0.5 0.4-0.3 0-0.5-0.2-0.5-0.4v-23.2c0-0.2 0.2-0.4 0.5-0.4 0.2 0 0.5 0.2 0.5 0.4zm3.8 4.9v13.4c0 0.3-0.2 0.5-0.5 0.5-0.2 0-0.5-0.2-0.5-0.5v-13.4c0-0.3 0.3-0.5 0.5-0.5 0.3 0 0.5 0.2 0.5 0.5zm3.9-4.9v23.2c0 0.2-0.2 0.4-0.5 0.4-0.3 0-0.5-0.2-0.5-0.4v-23.2c0-0.2 0.2-0.4 0.5-0.4 0.3 0 0.5 0.2 0.5 0.4zm3.8 4.9v13.4c0 0.3-0.2 0.5-0.5 0.5-0.2 0-0.4-0.2-0.4-0.5v-13.4c0-0.3 0.2-0.5 0.4-0.5 0.3 0 0.5 0.2 0.5 0.5zm3.9 3.8v5.8c0 0.3-0.2 0.5-0.5 0.5-0.3 0-0.5-0.2-0.5-0.5v-5.8c0-0.3 0.2-0.5 0.5-0.5 0.3 0 0.5 0.2 0.5 0.5z"/>
+        </symbol>
+
+        <clipPath id="clip-path" clipPathUnits="objectBoundingBox"><path d="M0.346,0.999 c-0.001,-0.002,-0.039,-0.004,-0.094,-0.005 c-0.05,-0.001,-0.092,-0.002,-0.093,-0.003 c-0.001,-0.001,-0.032,-0.002,-0.07,-0.003 c-0.076,-0.002,-0.078,-0.002,-0.086,-0.024 l-0.004,-0.011,0,-0.454,0,-0.454,0.005,-0.01 c0.01,-0.022,0.005,-0.021,0.119,-0.024 c0.056,-0.001,0.112,-0.004,0.123,-0.004 c0.09,-0.006,0.389,-0.009,0.432,-0.003 c0.012,0.001,0.071,0.004,0.2,0.007 l0.097,0.003,0.009,0.008 c0.016,0.014,0.015,-0.034,0.014,0.484 l0,0.454,-0.004,0.008 c-0.01,0.018,-0.011,0.019,-0.094,0.021 c-0.031,0.001,-0.069,0.002,-0.085,0.003 c-0.143,0.006,-0.202,0.008,-0.325,0.009 c-0.091,0.001,-0.143,0,-0.145,-0.001"></path></clipPath>
+      </defs>
+    </svg>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
